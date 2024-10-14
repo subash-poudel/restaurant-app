@@ -2,18 +2,19 @@ import { MENU_ITEMS } from "@/app/menu";
 import { MenuItem } from "@/app/models";
 
 function getAllMenuItems(): MenuItem[] {
-  const allItems = Object.values(MENU_ITEMS).reduce((items, acc) => {
-    if (Array.isArray(items)) {
-      return [...items, ...acc];
+  const allItems: MenuItem[] = [];
+  for(const [key, value] of Object.entries(MENU_ITEMS)) {
+    if (key === "restaurantName" ) {
+      continue;
     }
-    return acc;
-  }, []) as MenuItem[];
+    allItems.push(...value);
+  }
   return allItems;
 }
 
 function getItem(itemId: string): MenuItem {
   const allItems = getAllMenuItems();
-  const item = allItems.find((item) => item.name === itemId);
+  const item = allItems.find((item) => item.id.toString() === itemId);
   return item ?? MENU_ITEMS.appetizers[0];
 }
 
@@ -21,7 +22,7 @@ export async function generateStaticParams() {
   const items = getAllMenuItems();
 
   return items.map((item) => ({
-    itemId: encodeURIComponent(item.name),
+    itemId: encodeURIComponent(item.id),
   }));
 }
 

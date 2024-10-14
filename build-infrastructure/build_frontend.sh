@@ -38,6 +38,7 @@ if [ -d "$TARGET_DIR" ]; then
   echo "Running transformation complete"
   cd ../../
   cd $TARGET_DIR
+  cd frontend
   npm install
   npm run build
   pwd

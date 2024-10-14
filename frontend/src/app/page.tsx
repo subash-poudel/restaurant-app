@@ -15,7 +15,7 @@ function MenuItemList({
         {category}
       </h2>
       {items.map((item) => (
-        <Link href={`/items/${item.name}`} key={item.id}>
+        <Link href={`/items/${item.id}`} key={item.id}>
           <div className="bg-white shadow-md rounded-lg p-6">
             <h3 className="text-xl font-bold text-gray-900">{item.name}</h3>
             <p className="text-gray-600 mt-2">{item.description}</p>
