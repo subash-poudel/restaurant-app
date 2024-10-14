@@ -3,8 +3,10 @@ const mustache = require("mustache");
 
 console.log("Starting file transformation");
 
-const PATH_PREFIX = "restaurant-app/frontend/src/app";
+const PATH_PREFIX = "./restaurant-app/frontend/src/app";
 const inputFilePaths = [PATH_PREFIX + "/layout.tsx", PATH_PREFIX + "/menu.ts"];
+console.log('test 2');
+
 
 function getRandomInt() {
   const min = Math.ceil(1);
