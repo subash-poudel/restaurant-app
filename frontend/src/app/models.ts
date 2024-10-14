@@ -6,6 +6,7 @@ export interface MenuItem {
 }
 
 export interface Menu {
+  restaurantName: string;
   appetizers: MenuItem[];
   mainCourses: MenuItem[];
   desserts: MenuItem[];

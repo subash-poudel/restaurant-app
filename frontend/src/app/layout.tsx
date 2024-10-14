@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Awesome Restaurant",
-  description: "Created by sp",
+  title: "{{{restaurant_name}}}",
+  description: "{{restaurant_description}}",
 };
 
 export default function RootLayout({

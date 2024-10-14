@@ -1,6 +1,7 @@
 import { Menu } from "./models";
 
 export const MENU_ITEMS: Menu = {
+  restaurantName: "{{restaurant_name}}",
   appetizers: [
     {
       id: 1,
