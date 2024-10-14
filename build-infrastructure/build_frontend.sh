@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Variables
-# if [ $# -lt 1 ]; then
-#   echo "Usage: $0 token"
-#   exit 1
-# fi
+if [ $# -lt 1 ]; then
+  echo "Usage: $0 token"
+  exit 1
+fi
 
+# Variables
 TOKEN=$1
 REPO_URL="https://$TOKEN@github.com/subash-poudel/restaurant-app.git"
 TARGET_DIR="restaurant-app"
@@ -34,7 +34,7 @@ if [ -d "$TARGET_DIR" ]; then
   npm install
   echo "Installed packages for transformation"
   echo "Running transformation"
-  node index.js
+  node pre-process.js
   echo "Running transformation complete"
   cd ../../
   cd $TARGET_DIR
